@@ -11,7 +11,10 @@
 		"format": "lint-staged",
 		"prepare": "husky install",
 		"precommit": "yarn lint && lint-staged",
-		"postinstall": "prisma generate"
+		"postinstall": "prisma generate",
+		"check": "npm run tsc && next lint --fix",
+		"tsc": "tsc",
+		"cl": "contentlayer build"
 	},
 	"lint-staged": {
 		"*.{html,js,md,yml}": [
@@ -27,15 +30,15 @@
 		"@vercel/og": "^0.5.4",
 		"canvas-confetti": "^1.6.0",
 		"clsx": "^1.2.1",
-		"contentlayer": "^0.3.2",
+		"contentlayer": "^0.3.4",
 		"crypto": "^1.0.1",
 		"date-fns": "^2.30.0",
 		"eslint": "8.39.0",
 		"eslint-config-next": "13.3.1",
 		"framer-motion": "^10.12.4",
 		"mdx-bundler": "^9.2.1",
-		"next": "^13.4.5-canary.9",
-		"next-contentlayer": "^0.3.2",
+		"next": "14.2.15",
+		"next-contentlayer": "^0.3.4",
 		"next-themes": "^0.2.1",
 		"prisma": "^4.13.0",
 		"react": "18.2.0",
@@ -61,5 +64,9 @@
 		"postcss": "^8.4.24",
 		"prettier": "^2.8.8",
 		"tailwindcss": "^3.3.2"
+	},
+	"engines": {
+		"node": "18.18.2",
+		"pnpm": "8.15.8"
 	}
 }
