@@ -3,12 +3,12 @@ import clsx from 'clsx'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
-import Navbar from '@/components/Navbar'
-import Provider from '@/components/Provider'
-import StickySocial from '@/components/StickySocial'
+import Navbar from '@/src/components/Navbar'
+import Provider from '@/src/components/Provider'
+import StickySocial from '@/src/components/StickySocial'
 
 import './globals.css'
-import Footer from '@/components/Footer'
+import Footer from '@/src/components/Footer'
 
 const inter = Inter({
 	subsets: ['latin'],

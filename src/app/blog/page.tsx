@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { allBlogs } from 'contentlayer/generated'
 
-import BlogList from '@/components/blog/BlogList'
-import AnimatedText from '@/components/AnimatedText'
-import FadeDown from '@/components/animations/FadeDown'
+import BlogList from '@/src/components/blog/BlogList'
+import AnimatedText from '@/src/components/AnimatedText'
+import FadeDown from '@/src/components/animations/FadeDown'
 
 export const metadata: Metadata = {
 	title: 'Blog',
-	description: 'Sharing learnings and thoughts on software development and beyond through my blog',
+	description:
+		'Sharing learnings and thoughts on software development and beyond through my blog',
 }
 
 export default async function BlogPage() {
@@ -18,7 +19,8 @@ export default async function BlogPage() {
 					<AnimatedText text='My Blog' />
 				</h1>
 				<p className='text-base md:text-lg mb-8'>
-					Sharing learnings and thoughts on software development and beyond through my blog
+					Sharing learnings and thoughts on software development and beyond
+					through my blog
 				</p>
 			</FadeDown>
 			<BlogList

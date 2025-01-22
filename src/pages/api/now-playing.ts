@@ -1,7 +1,7 @@
 import { NextApiResponse, type NextApiRequest } from 'next/types'
 
 import { getNowPlaying } from '../../lib/spotify'
-import { Artist, NowPlayingSong } from '@/types/Spotify'
+import { Artist, NowPlayingSong } from '@/src/types/Spotify'
 
 const nowPlaying = async (
 	req: NextApiRequest,

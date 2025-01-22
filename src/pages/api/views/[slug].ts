@@ -1,11 +1,13 @@
-
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import prisma from '@/lib/prisma'
+import prisma from '@/src/lib/prisma'
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+	req: NextApiRequest,
+	res: NextApiResponse
+) {
 	try {
-		const slug = req.query?.slug as string;
+		const slug = req.query?.slug as string
 		if (!slug) {
 			return res.status(400).json({ message: 'Slug is required.' })
 		}

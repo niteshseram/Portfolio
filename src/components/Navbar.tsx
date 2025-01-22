@@ -8,7 +8,7 @@ import ThemeSwitch from './ThemeSwitch'
 import AnimatedText from './AnimatedText'
 import Logo from './Logo'
 
-import { NAV_ITEMS } from '@/constants'
+import { NAV_ITEMS } from '@/src/constants'
 
 const NavBar = () => {
 	const pathname = usePathname()

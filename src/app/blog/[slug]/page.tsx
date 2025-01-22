@@ -3,11 +3,11 @@ import { parseISO, format } from 'date-fns'
 import { notFound } from 'next/navigation'
 
 import { allBlogs } from 'contentlayer/generated'
-import { Mdx } from '@/components/mdx'
+import { Mdx } from '@/src/components/mdx'
 import ViewCounter from '../view-counter'
-import Reaction from '@/components/blog/Reaction'
-import FadeDown from '@/components/animations/FadeDown'
-import FadeUp from '@/components/animations/FadeUp'
+import Reaction from '@/src/components/blog/Reaction'
+import FadeDown from '@/src/components/animations/FadeDown'
+import FadeUp from '@/src/components/animations/FadeUp'
 
 interface Params {
 	slug: string
@@ -38,7 +38,7 @@ export async function generateMetadata({
 	} = post
 	const ogImage = image
 		? `https://niteshseram.in${image}`
-		: `https://niteshseram.in/api/og?title=${title}`;
+		: `https://niteshseram.in/api/og?title=${title}`
 
 	return {
 		title,

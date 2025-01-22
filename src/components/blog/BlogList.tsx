@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import type { Blog } from 'contentlayer/generated'
 import FadeUp from '../animations/FadeUp'
-import ViewCounter from '@/app/blog/view-counter'
+import ViewCounter from '@/src/app/blog/view-counter'
 
 interface Props {
 	blogs: Blog[]

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 import FadeUp from './animations/FadeUp'
 
-import { SOCIAL } from '@/constants'
+import { SOCIAL } from '@/src/constants'
 
 const StickySocial = () => {
 	return (

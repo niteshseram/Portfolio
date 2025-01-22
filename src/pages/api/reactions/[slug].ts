@@ -1,22 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { createHash } from 'crypto'
 
-import prisma from '@/lib/prisma'
-import { REACTION } from '@/constants'
+import prisma from '@/src/lib/prisma'
+import { REACTION } from '@/src/constants'
 
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
 	try {
-		const ipAddress =
-			req.headers['x-forwarded-for'] || '0.0.0.0'
+		const ipAddress = req.headers['x-forwarded-for'] || '0.0.0.0'
 
 		const slug = req.query?.slug as string
-		const currentUserId =
-			createHash('md5')
-				.update(ipAddress + process.env.IP_ADDRESS_SALT!, 'utf8')
-				.digest('hex')
+		const currentUserId = createHash('md5')
+			.update(ipAddress + process.env.IP_ADDRESS_SALT!, 'utf8')
+			.digest('hex')
 		// Identify a specific users interactions with a specific post
 		const sessionId = slug + '___' + currentUserId
 
@@ -28,8 +26,12 @@ export default async function handler(
 		if (method === 'POST') {
 			const types = req.body
 
-			const likesCount = types.filter((type:string) => type === REACTION.like).length
-			const lovesCount = types.filter((type:string) => type === REACTION.love).length
+			const likesCount = types.filter(
+				(type: string) => type === REACTION.like
+			).length
+			const lovesCount = types.filter(
+				(type: string) => type === REACTION.love
+			).length
 
 			const [newOrUpdatedReactions, user] = await Promise.all([
 				prisma.reactions.upsert({
@@ -54,12 +56,12 @@ export default async function handler(
 					where: { id: sessionId },
 					create: {
 						id: sessionId,
-						isLiked: likesCount>0,
-						isLoved: lovesCount>0,
+						isLiked: likesCount > 0,
+						isLoved: lovesCount > 0,
 					},
 					update: {
-						...(likesCount>0 && { isLiked: true }),
-						...(lovesCount>0 && { isLoved: true }),
+						...(likesCount > 0 && { isLiked: true }),
+						...(lovesCount > 0 && { isLoved: true }),
 					},
 				}),
 			])
@@ -75,13 +77,13 @@ export default async function handler(
 		if (method === 'GET') {
 			const [reactions, user] = await Promise.all([
 				prisma.reactions.findUnique({
-				where: {
-					slug,
-				},
-			}),
-			prisma.session.findUnique({
-            where: { id: sessionId },
-          })
+					where: {
+						slug,
+					},
+				}),
+				prisma.session.findUnique({
+					where: { id: sessionId },
+				}),
 			])
 
 			return res.status(200).json({

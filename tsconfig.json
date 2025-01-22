@@ -30,8 +30,9 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"lib/renderCanvas.js",
-		".contentlayer/generated"
-, "lib/prisma.js"	],
+		"src/lib/renderCanvas.js",
+		".contentlayer/generated",
+		"src/lib/prisma.js"
+	],
 	"exclude": ["node_modules"]
 }

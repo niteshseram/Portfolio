@@ -1,4 +1,4 @@
-import { REACTION } from '@/constants'
+import { REACTION } from '@/src/constants'
 import React from 'react'
 import { useDebounce } from 'react-use'
 import useSWR, { SWRConfiguration } from 'swr'
@@ -7,9 +7,9 @@ const API_URL = `/api/reactions`
 
 type MetricsPayload = {
 	likes: string
-	loves: string,
-	isLiked: Boolean,
-	isLoved: Boolean,
+	loves: string
+	isLiked: Boolean
+	isLoved: Boolean
 }
 
 async function getPostReactions(slug: string): Promise<MetricsPayload> {
@@ -52,9 +52,9 @@ export const usePostReactions = (slug: string, config?: SWRConfiguration) => {
 	const reaction = (type: string) => {
 		// Prevent the user from reacting again
 		if (
-			!data 
-			|| (type === REACTION.like && data.isLiked)
-			|| (type === REACTION.love && data.isLoved)
+			!data ||
+			(type === REACTION.like && data.isLiked) ||
+			(type === REACTION.love && data.isLoved)
 		) {
 			return
 		}
@@ -89,7 +89,7 @@ export const usePostReactions = (slug: string, config?: SWRConfiguration) => {
 	useDebounce(
 		() => {
 			if (batchedReactions.length === 0) return
-			
+
 			const reactionsCopy = [...batchedReactions]
 			// Clear the batchedReactions array
 			setBatchedReactions([])

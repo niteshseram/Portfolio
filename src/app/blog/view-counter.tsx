@@ -1,9 +1,9 @@
 'use client'
 
-import useSWR from 'swr';
+import useSWR from 'swr'
 import { useEffect } from 'react'
 
-import fetcher from '@/lib/fetcher';
+import fetcher from '@/src/lib/fetcher'
 
 type PostView = {
 	slug: string
@@ -31,9 +31,5 @@ export default function ViewCounter({
 		}
 	}, [slug, trackView])
 
-	return (
-		<span>
-			{data ? `${views.toLocaleString()} views` : '- views​'}
-		</span>
-	)
+	return <span>{data ? `${views.toLocaleString()} views` : '- views​'}</span>
 }
