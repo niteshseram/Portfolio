@@ -1,12 +1,12 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 import FadeUp from './animations/FadeUp'
 
 import { SOCIAL } from '@/src/constants'
+import { Link } from '@/src/i18n/routing'
 
 const StickySocial = () => {
 	return (

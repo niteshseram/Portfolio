@@ -1,14 +1,14 @@
 'use client'
 import { ReactElement } from 'react'
 import { FiArrowRight } from 'react-icons/fi'
-import Link from 'next/link'
+import { Link } from '@/src/i18n/routing'
 
 import RoundedImage from '../RoundedImage'
 import AnimatedText from '../AnimatedText'
-
+import { useTranslations } from 'next-intl'
 
 export default function Hero(): ReactElement {
-
+	const t = useTranslations('HomePage')
 	return (
 		<section>
 			<h1 className='sr-only'>
@@ -36,12 +36,7 @@ export default function Hero(): ReactElement {
 					</div>
 				</div>
 				<div className='flex flex-col gap-8 pt-8'>
-					<p className='text-base md:text-lg'>
-						Hello, I&apos;m a Software Engineer with passion for creating
-						user-friendly and complex web applications. I&apos;m also an avid
-						open-source contributor and trying to learn from best minds out
-						there through open source.
-					</p>
+					<p className='text-base md:text-lg'>{t('description')}</p>
 					<Link href='/about'>
 						<div className='flex items-center'>
 							<span className='link'>Learn more&nbsp;</span>

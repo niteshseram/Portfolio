@@ -1,9 +1,9 @@
 import { parseISO, format } from 'date-fns'
-import Link from 'next/link'
 
 import type { Blog } from 'contentlayer/generated'
 import FadeUp from '../animations/FadeUp'
-import ViewCounter from '@/src/app/blog/view-counter'
+import ViewCounter from '@/src/app/[locale]/blog/view-counter'
+import { Link } from '@/src/i18n/routing'
 
 interface Props {
 	blogs: Blog[]

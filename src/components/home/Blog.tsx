@@ -1,5 +1,5 @@
 import { FiArrowRight } from 'react-icons/fi'
-import Link from 'next/link'
+import { Link } from '@/src/i18n/routing'
 
 import { allBlogs } from 'contentlayer/generated'
 import AnimatedText from '../AnimatedText'

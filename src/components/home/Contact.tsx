@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import { Link } from '@/src/i18n/routing'
 import { FiTwitter, FiMail, FiArrowRight } from 'react-icons/fi'
 
 const Contact = () => {
-  return (
+	return (
 		<section id='contact' className='pt-10'>
 			<h2 className='section-heading custom-underline'>Get In Touch</h2>
 			<p>

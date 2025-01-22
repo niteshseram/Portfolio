@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { HiBadgeCheck } from 'react-icons/hi'
+import { Link } from '@/src/i18n/routing'
 
 interface YearProps {
 	children: React.ReactNode
@@ -12,8 +12,8 @@ const Year = ({ children }: YearProps) => (
 )
 
 interface CheckpointProps {
-  title: string,
-  children?: React.ReactNode,
+	title: string
+	children?: React.ReactNode
 }
 
 const Checkpoint = ({ title, children }: CheckpointProps) => (
@@ -22,7 +22,9 @@ const Checkpoint = ({ title, children }: CheckpointProps) => (
 			<div className='text-green-700 dark:text-green-300 mt-1'>
 				<HiBadgeCheck className='h-5 w-5' />
 			</div>
-			<h5 className='font-medium text-base ml-2 text-dark dark:text-light'>{title}</h5>
+			<h5 className='font-medium text-base ml-2 text-dark dark:text-light'>
+				{title}
+			</h5>
 		</div>
 		<li className='pb-4 ml-2 border-solid border-l-2 border-gray-200 dark:border-gray-800 last:border-0 last:pb-0'>
 			<p className='ml-5 text-base'>{children}</p>
@@ -42,9 +44,9 @@ const FullTimeline = () => (
 		<Year>2022</Year>
 		<ul>
 			<Checkpoint title='MVP award 🎉'>
-				I was recognized for my performance at Auzmor and awarded
-				the <b>Most Valuable Performer</b> award. It felt amazing to be
-				appreciated for my hard work and dedication.
+				I was recognized for my performance at Auzmor and awarded the{' '}
+				<b>Most Valuable Performer</b> award. It felt amazing to be appreciated
+				for my hard work and dedication.
 			</Checkpoint>
 		</ul>
 		<Year>2021</Year>

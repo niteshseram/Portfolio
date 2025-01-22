@@ -1,14 +1,13 @@
 'use client'
 
 import clsx from 'clsx'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 import ThemeSwitch from './ThemeSwitch'
 import AnimatedText from './AnimatedText'
 import Logo from './Logo'
 
 import { NAV_ITEMS } from '@/src/constants'
+import { Link, usePathname } from '@/src/i18n/routing'
 
 const NavBar = () => {
 	const pathname = usePathname()

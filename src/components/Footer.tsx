@@ -1,15 +1,24 @@
-import Link from 'next/link'
 import NowPlaying from './NowPlaying'
+import I18nSelect from './I18nSelect'
+import { Link } from '@/src/i18n/routing'
 
 const navigation = {
 	general: [
-		{ name: 'Home', title: "Home Page", href: '/' },
-		{ name: 'About', title: "About Page", href: '/about' },
-		{ name: 'Blog', title: "Blog Page", href: '/blog' },
+		{ name: 'Home', title: 'Home Page', href: '/' },
+		{ name: 'About', title: 'About Page', href: '/about' },
+		{ name: 'Blog', title: 'Blog Page', href: '/blog' },
 	],
 	extra: [
-		{ name: 'Source', title: 'View source code on Github',href: 'https://github.com/niteshseram/niteshseram.in' },
-		{ name: 'Resume', title: 'View my resume', href: 'https://drive.google.com/file/d/1uQxjmAY-mVyv-4F_oyrQitvzfCxVUka3/view' },
+		{
+			name: 'Source',
+			title: 'View source code on Github',
+			href: 'https://github.com/niteshseram/niteshseram.in',
+		},
+		{
+			name: 'Resume',
+			title: 'View my resume',
+			href: 'https://drive.google.com/file/d/1uQxjmAY-mVyv-4F_oyrQitvzfCxVUka3/view',
+		},
 	],
 	social: [
 		{
@@ -86,35 +95,38 @@ const Footer = () => (
 					</div>
 				</div>
 			</div>
-			<div className='flex items-start flex-col mt-12'>
-				<NowPlaying />
-				<p className='text-base font-medium'>
-					&copy; {new Date().getFullYear()} Nitesh Seram
-				</p>
+			<div className='grid  md:grid-cols-3 items-center gap-y-2 mt-12'>
+				<div className='flex items-start flex-col col-span-1'>
+					<NowPlaying />
+					<p className='text-base font-medium'>
+						&copy; {new Date().getFullYear()} Nitesh Seram
+					</p>
+				</div>
+				<I18nSelect />
 			</div>
 		</div>
 	</footer>
 )
 
 interface FooterLinkProps {
-  href: string,
-  name: string,
-	title?: string,
-  newTab?: boolean,
+	href: string
+	name: string
+	title?: string
+	newTab?: boolean
 }
 
 const FooterLink = ({ href, name, title, newTab }: FooterLinkProps) => (
-  <Link
-    href={href}
-    className='text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 mt-2 horizontal-underline tracking-wide'
-    aria-label={name}
+	<Link
+		href={href}
+		className='text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 mt-2 horizontal-underline tracking-wide'
+		aria-label={name}
 		title={title}
-    {...(newTab && {
-      target:'_blank',
-      rel:'noopener noreferrer',
-    })}
-  >
-    {name}
-  </Link>
+		{...(newTab && {
+			target: '_blank',
+			rel: 'noopener noreferrer',
+		})}
+	>
+		{name}
+	</Link>
 )
 export default Footer

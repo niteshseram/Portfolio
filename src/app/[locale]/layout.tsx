@@ -2,13 +2,17 @@ import type { Metadata } from 'next'
 import clsx from 'clsx'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { NextIntlClientProvider } from 'next-intl'
 
 import Navbar from '@/src/components/Navbar'
 import Provider from '@/src/components/Provider'
 import StickySocial from '@/src/components/StickySocial'
 
-import './globals.css'
+import '../globals.css'
 import Footer from '@/src/components/Footer'
+import { routing } from '@/src/i18n/routing'
+import { notFound } from 'next/navigation'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -54,25 +58,45 @@ export const metadata: Metadata = {
 	},
 }
 
-export default function RootLayout({
+export function generateStaticParams() {
+	return routing.locales.map((locale) => ({ locale }))
+}
+
+export default async function RootLayout({
 	children,
+	params: { locale },
 }: {
 	children: React.ReactNode
+	params: { locale: string }
 }) {
+	// Ensure that the incoming `locale` is valid
+	if (!routing.locales.includes(locale as any)) {
+		notFound()
+	}
+
+	// Enable static rendering
+	setRequestLocale(locale)
+
+	// Providing all messages to the client
+	// side is the easiest way to get started
+	const messages = await getMessages()
+
 	return (
-		<html lang='en'>
+		<html lang={locale}>
 			<body
 				className={clsx('antialiased bg-light dark:bg-dark', inter.variable)}
 			>
-				<Provider>
-					<Navbar />
-					<div className='max-w-2xl w-[92vw] sm:w-[90vw] mx-auto pt-20'>
-						<StickySocial />
-						{children}
-						<Footer />
-						<Analytics />
-					</div>
-				</Provider>
+				<NextIntlClientProvider messages={messages}>
+					<Provider>
+						<Navbar />
+						<div className='max-w-2xl w-[92vw] sm:w-[90vw] mx-auto pt-20'>
+							<StickySocial />
+							{children}
+							<Footer />
+							<Analytics />
+						</div>
+					</Provider>
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	)
