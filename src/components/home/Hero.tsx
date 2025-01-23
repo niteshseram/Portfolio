@@ -39,7 +39,7 @@ export default function Hero(): ReactElement {
 					<p className='text-base md:text-lg'>{t('description')}</p>
 					<Link href='/about'>
 						<div className='flex items-center'>
-							<span className='link'>Learn more&nbsp;</span>
+							<span className='link'>{t('learnMore')}&nbsp;</span>
 							<span className='animate-bounce-right'>
 								<FiArrowRight />
 							</span>
