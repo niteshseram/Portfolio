@@ -1,4 +1,4 @@
-## re you familiar with styling SVG?
+## Are you familiar with styling SVG?
 
 There are several ways to color shapes (including specifying attributes on the object) using inline CSS, an embedded CSS section, or an external CSS file. Most SVGs you find on the web uses inline CSS, but there are advantages and disadvantages associated with each type.
 
