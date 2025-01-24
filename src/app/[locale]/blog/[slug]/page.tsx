@@ -25,7 +25,9 @@ export async function generateMetadata({
 }: {
 	params: Params
 }): Promise<Metadata | undefined> {
-	const post = allBlogs.find((post) => post.slug === params.slug)
+	const post = allBlogs.find(
+		(post) => post.slug === params.slug && post.locale === params.locale
+	)
 	if (!post) {
 		return
 	}
