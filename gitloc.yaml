@@ -5,4 +5,4 @@ config:
         - de
     directories:
         - locales
-        - src/content
+        - src/content/setting-up-eslint-prettier-and-husky-with-lint-staged-for-your-nextjs-project

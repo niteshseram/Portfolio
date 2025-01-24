@@ -2,7 +2,7 @@
 "title": 'My Open Source Journey'
 "publishedAt": '2021-09-08'
 "summary": 'I will be sharing my little what so experience I had with open source contributions till now,  and answered few questions like should you be contributing, what all you can learn in the process, how to get started, and all those things to help you learn a little about open source contribution'
-"image": '/images/open-source-journey/banner.png'
+"image": /images/open-source-journey/banner.png
 ---
 
 <Image
