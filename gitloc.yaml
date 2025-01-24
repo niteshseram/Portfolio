@@ -5,5 +5,4 @@ config:
         - de
     directories:
         - locales
-        - __translations__
-        - content
+        - src/content

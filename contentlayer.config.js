@@ -4,13 +4,23 @@ import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import path from 'node:path'
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
 	readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
 	slug: {
 		type: 'string',
-		resolve: (doc) => doc._raw.flattenedPath,
+		resolve: (doc) => doc._raw.flattenedPath.split(path.posix.sep)[0],
+	},
+	locale: {
+		description: 'Locale of document',
+		resolve: (doc) =>
+			doc._raw.sourceFileName.replace(
+				path.extname(doc._raw.sourceFileName),
+				''
+			),
+		type: 'string',
 	},
 	structuredData: {
 		type: 'object',
@@ -35,7 +45,7 @@ const computedFields = {
 
 export const Blog = defineDocumentType(() => ({
 	name: 'Blog',
-	filePathPattern: `**/*.mdx`,
+	filePathPattern: `**/*.md`,
 	contentType: 'mdx',
 	fields: {
 		title: {

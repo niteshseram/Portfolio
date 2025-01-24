@@ -11,6 +11,7 @@ import FadeUp from '@/src/components/animations/FadeUp'
 
 interface Params {
 	slug: string
+	locale: string
 }
 
 export async function generateStaticParams() {
@@ -69,7 +70,9 @@ interface BlogProps {
 }
 
 export default async function Blog({ params }: BlogProps) {
-	const post = allBlogs.find((post) => post.slug === params.slug)
+	const post = allBlogs.find(
+		(post) => post.slug === params.slug && post.locale === params.locale
+	)
 
 	if (!post) {
 		notFound()

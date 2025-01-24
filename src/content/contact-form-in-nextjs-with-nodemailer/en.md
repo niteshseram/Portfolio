@@ -1,8 +1,8 @@
 ---
-title: 'Contact Form in Next.js with Nodemailer'
-publishedAt: '2021-09-14'
-summary: 'This is a walk-through of how to implement an email contact form with Next.js and Nodemailer'
-image: '/images/nextjs-with-nodemailer/banner.png'
+"title": 'Contact Form in Next.js with Nodemailer'
+"publishedAt": '2021-09-14'
+"summary": 'This is a walk-through of how to implement an email contact form with Next.js and Nodemailer'
+"image": '/images/nextjs-with-nodemailer/banner.png'
 ---
 
 <Image

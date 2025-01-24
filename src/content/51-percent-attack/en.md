@@ -1,7 +1,7 @@
 ---
-title: "Understanding 51% Attack on Blockchain"
-publishedAt: '2023-06-04'
-summary: "Understand the 51% attack, a significant threat to blockchain's decentralization and how it is being prevented"
+"title": "Understanding 51% Attack on Blockchain"
+"publishedAt": '2023-06-04'
+"summary": "Understand the 51% attack, a significant threat to blockchain's decentralization and how it is being prevented"
 ---
 
 ### Introduction

@@ -1,7 +1,7 @@
 ---
-title: 'Consensus Algorithms: Building Trust in Blockchain'
-publishedAt: '2023-05-29'
-summary: 'Understand consensus algorithms and how it ensures trust, validate transactions, and maintain ledger integrity'
+"title": 'Consensus Algorithms: Building Trust in Blockchain'
+"publishedAt": '2023-05-29'
+"summary": 'Understand consensus algorithms and how it ensures trust, validate transactions, and maintain ledger integrity'
 ---
 
 ### Introduction

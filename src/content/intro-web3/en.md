@@ -1,7 +1,7 @@
 ---
-title: 'Web3 101: Understanding Blockchain, Web3, and the Future of the Internet'
-publishedAt: '2023-05-06'
-summary: 'Gain a deeper understanding of blockchain and Web3 in this blog. Discover the use cases of blockchain, how it differs from the current web, and the problems it solves for the future of the internet.'
+"title": 'Web3 101: Understanding Blockchain, Web3, and the Future of the Internet'
+"publishedAt": '2023-05-06'
+"summary": 'Gain a deeper understanding of blockchain and Web3 in this blog. Discover the use cases of blockchain, how it differs from the current web, and the problems it solves for the future of the internet.'
 ---
 
 Welcome to the world of Web3! If you're new to this space, you might have heard a lot of buzzwords being thrown around like blockchain, Web3, and more. In this blog post, we'll be covering everything you need to know about these terms and what they mean for the future of the internet.

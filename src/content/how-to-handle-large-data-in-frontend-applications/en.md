@@ -1,7 +1,7 @@
 ---
-title: "How to Handle Large Datasets in Frontend Applications"
-publishedAt: '2023-06-17'
-summary: "Explore powerful techniques for handling large datasets in React application, including pagination, infinite scroll, and windowing"
+"title": "How to Handle Large Datasets in Frontend Applications"
+"publishedAt": '2023-06-17'
+"summary": "Explore powerful techniques for handling large datasets in React application, including pagination, infinite scroll, and windowing"
 ---
 
 ### Introduction

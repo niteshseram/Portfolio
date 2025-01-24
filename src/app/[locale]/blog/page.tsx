@@ -11,7 +11,12 @@ export const metadata: Metadata = {
 		'Sharing learnings and thoughts on software development and beyond through my blog',
 }
 
-export default async function BlogPage() {
+export default async function BlogPage({
+	params: { locale },
+}: {
+	params: { locale: string }
+}) {
+	const blogs = allBlogs.filter((blog) => blog.locale === locale)
 	return (
 		<section className='min-h-screen my-10'>
 			<FadeDown duration={0.4}>
@@ -24,7 +29,7 @@ export default async function BlogPage() {
 				</p>
 			</FadeDown>
 			<BlogList
-				blogs={allBlogs.sort((a, b) => {
+				blogs={blogs.sort((a, b) => {
 					if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
 						return -1
 					}

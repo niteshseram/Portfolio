@@ -1,8 +1,8 @@
 ---
-title: 'Setting up ESLint, Prettier, and Husky with lint-staged for your Next.js Project'
-publishedAt: '2021-09-26'
-summary: 'This is a walk-through of those steps required in setting up ESLint, Prettier, and Husky with lint-staged for a Next.js project'
-image: '/images/blog/setting-up-eslint-prettier-and-husky-with-lint-staged-for-your-nextjs-project/banner.png'
+"title": 'Setting up ESLint, Prettier, and Husky with lint-staged for your Next.js Project'
+"publishedAt": '2021-09-26'
+"summary": 'This is a walk-through of those steps required in setting up ESLint, Prettier, and Husky with lint-staged for a Next.js project'
+"image": '/images/blog/setting-up-eslint-prettier-and-husky-with-lint-staged-for-your-nextjs-project/banner.png'
 ---
 
 <Image
