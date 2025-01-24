@@ -6,3 +6,4 @@ config:
     directories:
         - locales
         - __translations__
+        - content
